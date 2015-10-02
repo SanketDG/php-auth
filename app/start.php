@@ -20,4 +20,6 @@ $app->configureMode($app->config('mode'), function() use ($app) {
     $app->config = Config::load(INC_ROOT . "/app/config/{$app->mode}.php");
 });
 
+require 'database.php';
+
 ?>
