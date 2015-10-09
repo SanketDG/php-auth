@@ -1,12 +1,14 @@
 <?php
 
-namespace Codecourse\Helpers;
+namespace Myproject\Helpers;
 
 class Hash
 {
+    protected $config;
+
     public function __construct($config)
     {
-        $this->config = config;
+        $this->config = $config;
     }
 
     public function password($password)

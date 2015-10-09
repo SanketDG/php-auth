@@ -35,7 +35,7 @@ $app->container->set('user', function() {
     return new User;
 });
 
-$app->container->singleton('hash', function() {
+$app->container->singleton('hash', function() use ($app) {
     return new Hash($app->config);
 });
 
