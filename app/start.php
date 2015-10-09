@@ -8,6 +8,7 @@ use Noodlehaus\Config;
 
 use Myproject\User\User;
 use Myproject\Helpers\Hash;
+use Myproject\Validation\Validator;
 
 session_cache_limiter(false);
 session_start();
@@ -37,6 +38,10 @@ $app->container->set('user', function() {
 
 $app->container->singleton('hash', function() use ($app) {
     return new Hash($app->config);
+});
+
+$app->container->singleton('validation', function() use ($app) {
+    return new Validator;
 });
 
 $view = $app->view;
